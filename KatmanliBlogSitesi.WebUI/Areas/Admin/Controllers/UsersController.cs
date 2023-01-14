@@ -2,10 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using KatmanliBlogSitesi.Data;
 using KatmanliBlogSitesi.Entites;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KatmanliBlogSitesi.WebUI.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("Admin"), Authorize(Policy = "AdminPolicy")]
     public class UsersController : Controller
     {
         private readonly DatabaseContext _context;

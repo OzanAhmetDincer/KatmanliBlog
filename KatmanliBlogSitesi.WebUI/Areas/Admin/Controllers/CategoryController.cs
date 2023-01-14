@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KatmanliBlogSitesi.WebUI.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("Admin"), Authorize(Policy = "AdminPolicy")]
     public class CategoryController : Controller
     {
         private readonly IService<Category> _service;
